@@ -14,10 +14,14 @@ import org.hibernate.annotations.Synchronize;
 @Entity
 @Immutable
 @Synchronize({"T_User"})
+//@Subselect("SELECT u.id, u.name, u.email, u.birth, "
+//        + "(YEAR(CURRENT_DATE)-YEAR(u.birth)) as age "
+//        + "FROM T_User u "
+//        + "ORDER BY age DESC")//從大到小
 @Subselect("SELECT u.id, u.name, u.email, u.birth, "
         + "(YEAR(CURRENT_DATE)-YEAR(u.birth)) as age "
         + "FROM T_User u "
-        + "ORDER BY age DESC")//從大到小
+        )
 public class UserView {
     @Id
     private Long id;
