@@ -103,7 +103,7 @@ public class PSIController {
 
         return "psi/purchase";
     }
-
+//進貨
     @PostMapping(value = {"/purchase"},
             consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String createPurchase(@RequestBody MultiValueMap<String, String> map) {
@@ -126,7 +126,7 @@ public class PSIController {
 
         return "psi/sales";
     }
-
+//銷貨
     @PostMapping(value = {"/sales"},
             consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String createSales(@RequestBody MultiValueMap<String, String> map) {
