@@ -19,7 +19,7 @@ public class Test2 {
             user.setName(faker.name().lastName());
             user.setEmail(faker.internet().emailAddress());
             user.setBirth(faker.date().birthday());
-            ur.save(user); //方法結束(Commit)後才存
+          //  ur.save(user); //方法結束(Commit)後才存
         }
         //ur.saveAndFlush(user); 及時儲存
        

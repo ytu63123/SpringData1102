@@ -34,8 +34,8 @@ public class Test4 {
             System.out.println("Date Error !");
         }
 
-        users = ur.getByAgeLessThan(20);
-        System.out.println(users);
+//        users = ur.getByAgeLessThan(20);
+//        System.out.println(users);
 
         Long totalCount=ur.getTotalCount();
         System.out.println(totalCount);

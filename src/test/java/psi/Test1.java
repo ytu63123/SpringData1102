@@ -43,13 +43,13 @@ public class Test1 {
 //        ur.save(Arrays.asList(u1,u2,u3,u4,u5));
 //        System.out.println("OK");
         //賣出商品
-        Sales s1 = new Sales(50, 20, p1);
-        Sales s2 = new Sales(70, 10, p2);
-        Sales s3 = new Sales(100, 20, p3);
-        Sales s4 = new Sales(120, 10, p3);
-        Sales s5 = new Sales(50, 10, p1);
-        sr.save(Arrays.asList(s1,s2,s3,s4,s5));
-        System.out.println("OK");
+//        Sales s1 = new Sales(50, 20, p1);
+//        Sales s2 = new Sales(70, 10, p2);
+//        Sales s3 = new Sales(100, 20, p3);
+//        Sales s4 = new Sales(120, 10, p3);
+//        Sales s5 = new Sales(50, 10, p1);
+//        sr.save(Arrays.asList(s1,s2,s3,s4,s5));
+//        System.out.println("OK");
 
     }
 }

@@ -20,11 +20,11 @@ public class Test3 {
         User user = ur.findOne(1L);
         System.out.println(user);
         //修改
-        user.setName("Antina");
-        ur.saveAndFlush(user);
-        user = ur.findOne(1L);
-        System.out.println(user);
+//        user.setName("Antina");
+//        ur.saveAndFlush(user);
+//        user = ur.findOne(1L);
+//        System.out.println(user);
         //刪除最後一筆(id=169)
-        ur.delete(169L);
+      //  ur.delete(169L);
     }
 }

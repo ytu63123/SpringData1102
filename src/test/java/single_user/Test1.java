@@ -19,7 +19,7 @@ public class Test1 {
         user.setBirth(new Date());
         
         //ur.saveAndFlush(user); 及時儲存
-        ur.save(user);    //方法結束(Commit)後才存
+     //   ur.save(user);    //方法結束(Commit)後才存
         
     }
 }
