@@ -16,6 +16,9 @@ public class Inventory {
     @Column
     private String name;
     
+    @Column(name = "image",columnDefinition = "clob")
+    private String image;
+    
     @Column(name = "PU_QTY")
     private Integer puQty;
     
@@ -76,10 +79,15 @@ public class Inventory {
         this.saTotal = saTotal;
     }
 
-    @Override
-    public String toString() {
-        return "Inventory{" + "id=" + id + ", name=" + name + ", puQty=" + puQty + ", puTotal=" + puTotal + ", saQty=" + saQty + ", saTotal=" + saTotal + '}';
+    public String getImage() {
+        return image;
     }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+
     
     
 }

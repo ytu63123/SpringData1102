@@ -3,6 +3,7 @@ package com.spring.mvc.psi.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import org.hibernate.annotations.Immutable;
 
@@ -16,17 +17,24 @@ public class Inventory2 {
     @Column
     private String name;
     
+    @Column(name = "image", columnDefinition="clob")
+    @Lob
+    private String image;
+    
     @Column(name = "QTY")
     private Integer qty;
     
-    @Column(name = "COST")
-    private Integer cost;
+    @Column(name = "PU_COST")
+    private Integer puCost;
+    
+    @Column(name = "SA_COST")
+    private Integer saCost;
     
     @Column(name = "PRICE1")
     private Integer price1;
     
     @Column(name = "PRICE2")
-    private Integer PRICE2;
+    private Integer price2;
 
     public Integer getId() {
         return id;
@@ -44,6 +52,14 @@ public class Inventory2 {
         this.name = name;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public Integer getQty() {
         return qty;
     }
@@ -52,12 +68,20 @@ public class Inventory2 {
         this.qty = qty;
     }
 
-    public Integer getCost() {
-        return cost;
+    public Integer getPuCost() {
+        return puCost;
     }
 
-    public void setCost(Integer cost) {
-        this.cost = cost;
+    public void setPuCost(Integer puCost) {
+        this.puCost = puCost;
+    }
+
+    public Integer getSaCost() {
+        return saCost;
+    }
+
+    public void setSaCost(Integer saCost) {
+        this.saCost = saCost;
     }
 
     public Integer getPrice1() {
@@ -68,20 +92,13 @@ public class Inventory2 {
         this.price1 = price1;
     }
 
-    public Integer getPRICE2() {
-        return PRICE2;
+    public Integer getPrice2() {
+        return price2;
     }
 
-    public void setPRICE2(Integer PRICE2) {
-        this.PRICE2 = PRICE2;
+    public void setPrice2(Integer price2) {
+        this.price2 = price2;
     }
 
-    @Override
-    public String toString() {
-        return "Inventory2{" + "id=" + id + ", name=" + name + ", qty=" + qty + ", cost=" + cost + ", price1=" + price1 + ", PRICE2=" + PRICE2 + '}';
-    }
-
-
-    
     
 }
