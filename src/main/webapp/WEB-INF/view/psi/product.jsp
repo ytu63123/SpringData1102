@@ -67,6 +67,7 @@
                                 <input type="file" name="myfile" id="myfile" /><p />                                                                                     
                                 <img style="cursor: zoom-in" id="previewImage" src="${ product.image==null?space:product.image }" width="${ product.image==null?'0':'100' }" /><p />
                                 <input type="hidden" id="_method" name="_method" value="${ _method }" readonly /><p />                                
+                                <div style="color: red">${ deleteError }</div>
                                 <button type="sumbit" class="pure-button pure-button-primary">Submit</button>
                             </fieldset>
                         </form:form>

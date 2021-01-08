@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/psi")
@@ -23,6 +24,7 @@ public class PSIController {
 
     @GetMapping(value = {"/product", "/product/{id}", "/product/{name}/{id}"})
     public String readProduct(Model model,
+            @RequestParam Optional<Boolean> deleteError,
             @PathVariable Optional<Integer> id,
             @PathVariable Optional<String> name) {
         String _method = "POST";
@@ -37,6 +39,7 @@ public class PSIController {
         model.addAttribute("_method", _method);
         model.addAttribute("product", product);
         model.addAttribute("products", productRepository.findAll());
+        model.addAttribute("deleteError", deleteError.isPresent()?"刪除失敗，已有商品購買紀錄，不能刪除":"");
         return "psi/product";
     }
 
@@ -54,8 +57,13 @@ public class PSIController {
 
     @DeleteMapping(value = {"/product"})
     public String deleteProduct(@ModelAttribute("product") Product product) {
-        productRepository.delete(product.getId());
-        return "redirect: ../product";
+        try {
+             productRepository.delete(product.getId());
+        } catch (Exception e) {
+            return "redirect: ../product?deleteError=true";
+        }
+       return "redirect: ../product";
+        
     }
 
 }
